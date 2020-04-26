@@ -6,7 +6,7 @@ COVID is possibly better diagnosed using radiological imaging Fang, 2020. Compan
 # About the dataset
 This dataset is a database of COVID-19 cases with chest X-ray or CT images. It contains COVID-19 cases as well as MERS, SARS, and ARDS.Source of this dataset is kaggle (https://www.kaggle.com/bachrr/covid-chest-xray). Here is a list of each metadata field, with explanations:
 
-Patientid (internal identifier, just for this dataset)
+* Patientid (internal identifier, just for this dataset)
 offset (number of days since the start of symptoms or hospitalization for each image, this is very important to have when there are multiple images for the same patient to track progression while being imaged. If a report says "after a few days" let's assume 5 days.)
 sex (M, F, or blank)
 age (age of the patient in years)
