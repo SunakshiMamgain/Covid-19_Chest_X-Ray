@@ -1,0 +1,130 @@
+{% extends "base.html" %} {% block content %}
+
+<style>
+
+  table.blueTable {
+    border: 1px solid #39D2B4;
+    background-color: #EEEEEE;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  table.blueTable td, table.blueTable th {
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+  }
+  table.blueTable tbody td {
+    font-size: 13px;
+  }
+  table.blueTable tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  table.blueTable thead {
+    background: #39D2B4;
+    /* background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #39D2B4 100%);
+    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #39D2B4 100%);
+    background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #39D2B4 100%); */
+    border-bottom: 2px solid #39D2B4;
+  }
+  table.blueTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-left: 2px solid #D0E4F5;
+  }
+  table.blueTable thead th:first-child {
+    border-left: none;
+  }
+
+  #39D2B4
+
+  table.blueTable tfoot {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #D0E4F5;
+    background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    border-top: 2px solid #444444;
+  }
+  table.blueTable tfoot td {
+    font-size: 14px;
+  }
+  table.blueTable tfoot .links {
+    text-align: right;
+  }
+  table.blueTable tfoot .links a{
+    display: inline-block;
+    background: #39D2B4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+
+  .containerr {
+  width: 100%;
+  height: 200px;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.one {
+  width: 15%;
+  height: 200px;
+  float: left;
+}
+
+.two {
+  margin-left: 35%;
+  margin-top: 12.5%;
+  height: 200px;
+}
+
+</style>
+<h2>Please Select the Image <h2>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg" >
+    </form>
+
+    <section class="containerr">
+
+  <div class="image-section one" id="workspace">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+    <div class="two">
+    <table id="response" style="display:none;" class="blueTable">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Probability</th>
+          <th>Results</th>
+        </tr>
+      </thead>
+      <tbody>
+  </tbody>
+</table>
+</div>
+  </section>
+</div>
+</div>
+
+
+{% endblock %}
